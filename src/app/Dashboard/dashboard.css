@@ -24,3 +24,9 @@
     color: #333;
     font-weight: 500;
 }
+main {
+    padding-top: 90px;
+}
+main .card{
+    margin-bottom: 20px;
+}

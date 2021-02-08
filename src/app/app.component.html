@@ -1,26 +1,65 @@
-<html lang="en">
+<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform">
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="./app.component.css">-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
+<body>
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <!-- Navbar content -->
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">CRUD app</a>
+  <input type="text" class="form-control form-control-primary w-100" id="productName"  placeholder="Search Product..." >
 
+</nav>
+
+<!-- Container -->
 <div class="container">
-  <div class="container-fluid">
-    <div style="color: #a600ff;">
-      <h1>{{title}}</h1>
-      <h3>{{description}}</h3>
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 bg-light d-none d-md-block sidebar">
+      <div class="left-sidebar">
+        <ul class="nav flex-column sidebar-nav">
+          <li class="nav-item">
+            <a routerLink="products" class="btn btn-primary active" role="button" routerLinkActive="active" style="color: #000000">
+              <!-- ICON -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
+                <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755z"/>
+              </svg>
+              Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="create" class="btn btn-primary active" role="button" routerLinkActive="active" style="color: #000000">
+              <!-- ICON -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-bar-graph-fill" viewBox="0 0 16 16">
+                <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-2 11.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1z"/>
+              </svg>
+              Create Product
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-
-    <nav>
-      <a routerLink="customers" class="btn btn-primary active" role="button" routerLinkActive="active">Users</a>
-      <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Add User</a>
-    </nav>
-    <router-outlet></router-outlet>
   </div>
 </div>
 
+<main>
+  <div class="container">
+    <div class="container-fluid">
+      <!--
+      <div style="color: #a600ff;">
+        <h1>{{title}}</h1>
+        <h3>{{description}}</h3>
+      </div>
+      -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>
+
+</body>
