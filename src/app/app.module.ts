@@ -11,9 +11,6 @@ import { AngularFirestoreModule, SETTINGS } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
-import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
-import { CustomersListComponent } from './customers/customers-list/customers-list.component';
-import { CreateCustomerComponent } from './customers/create-customer/create-customer.component';
 import { CreateProductComponent } from './product/create-product/create-product.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { ProductsListComponent } from './product/products-list/products-list.component';
@@ -22,9 +19,6 @@ import { ProductsListComponent } from './product/products-list/products-list.com
   declarations: [
     ProductsListComponent,
     AppComponent,
-    CustomerDetailsComponent,
-    CustomersListComponent,
-    CreateCustomerComponent,
     ProductDetailsComponent,
     CreateProductComponent
   ],

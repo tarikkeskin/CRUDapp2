@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ProductService} from '../product.service';
 import {map} from 'rxjs/operators';
 
@@ -11,6 +11,7 @@ import {map} from 'rxjs/operators';
 export class ProductsListComponent implements OnInit {
 
   products: any;
+  
 
   constructor(private productService: ProductService) { }
 

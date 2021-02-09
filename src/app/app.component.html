@@ -13,9 +13,9 @@
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
   <!-- Navbar content -->
   <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">CRUD app</a>
-  <input type="text" class="form-control form-control-primary w-100" id="productName"  placeholder="Search Product..." >
-
+    <input type="text" name="serialNumber" class="form-control form-control-primary w-100"  placeholder="Search Product..." >
 </nav>
+
 
 <!-- Container -->
 <div class="container">
@@ -51,12 +51,8 @@
 <main>
   <div class="container">
     <div class="container-fluid">
-      <!--
-      <div style="color: #a600ff;">
-        <h1>{{title}}</h1>
-        <h3>{{description}}</h3>
-      </div>
-      -->
+
+      <app-products-list name="aliveli"></app-products-list>
       <router-outlet></router-outlet>
     </div>
   </div>
