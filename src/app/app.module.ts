@@ -10,25 +10,42 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule, SETTINGS } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
+//Material
+import { MatSliderModule } from '@angular/material/slider';
+import {MatCardModule, MatButtonModule, MatDatepickerModule, MatDatepicker, MatToolbarModule, MatListModule} from '@angular/material';
+
+
 import { AppComponent } from './app.component';
-import { CreateProductComponent } from './product/create-product/create-product.component';
-import { ProductDetailsComponent } from './product/product-details/product-details.component';
-import { ProductsListComponent } from './product/products-list/products-list.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { HomeComponent } from './components/home/home.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
     ProductsListComponent,
     AppComponent,
     ProductDetailsComponent,
-    CreateProductComponent
+    CreateProductComponent,
+    HomeComponent,
+    EditProductComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    MatButtonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MatSliderModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatToolbarModule,
+    MatListModule
   ],
   providers: [{ provide: SETTINGS, useValue: {} }],
   bootstrap: [AppComponent]

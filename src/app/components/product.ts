@@ -5,8 +5,8 @@ export class Product {
     description: string;
     price: string;
     inStock: boolean;
-    //createDate: Date;
-    //editDate: Date;
-    //deleteDate: Date;
+    createDate: Date;
+    editDate: Date;
+    deleteDate: Date;
     isActive: boolean;
 }

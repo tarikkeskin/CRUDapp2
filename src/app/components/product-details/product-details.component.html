@@ -40,7 +40,13 @@
                     <div>
                         <label>Active: </label> {{product.isActive}}
                     </div>
+                    <hr/>
+
+                    <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/oneProduct/'+this.product.productID]"> <i class="material-icons">visibility</i> Product Details</button>
+                    <hr/>
+                    <button mat-button mat-raised-button class="editButton" [routerLink]="['/edit/'+this.product.productID]"> <i class="material-icons">mode_edit</i> Edit Product</button>
                     <hr />
+
                     <span class="button is-small btn-primary" *ngIf='product.isActive' (click)='updateActive(false)'>Inactive</span>
 
                     <span class="button is-small btn-primary" *ngIf='!product.isActive' (click)='updateActive(true)'>Active</span>

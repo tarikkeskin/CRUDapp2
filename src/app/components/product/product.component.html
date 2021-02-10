@@ -1,0 +1,31 @@
+<mat-toolbar> Product Details </mat-toolbar>
+
+<div class="details-book">
+    <mat-card>
+        <mat-card-title>
+            <span class="mat-card-header">{{title}}</span>
+        </mat-card-title>
+        <mat-card-content>
+            <div class="left">
+                <img src="/assets/img/indir.jpeg" alt="image">
+            </div>
+            <div class="right">
+                <mat-list>
+                    <mat-list-item><i class="material-icons">star</i>ProductName:&nbsp;&nbsp;<b> {{title}}</b></mat-list-item>
+                    <mat-list-item><i class="material-icons">star</i>Price:&nbsp;&nbsp;<b> {{price}}</b></mat-list-item>
+                    <mat-list-item><i class="material-icons">star</i>CreateDate:&nbsp;&nbsp;<b> {{CreateDate}}</b></mat-list-item>
+                    <mat-list-item><i class="material-icons">star</i>EditDate:&nbsp;&nbsp;<b> {{EditDate}}</b></mat-list-item>
+                </mat-list>
+            </div>
+            <hr>
+            <mat-toolbar>Description</mat-toolbar>
+            {{description}}
+            <hr>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button mat-raised-button class="editButton" [routerLink]="['/edit/'+this.id]"> <i class="material-icons">mode_edit</i> Edit Product</button>
+            <hr />
+        </mat-card-actions>
+    </mat-card>
+</div>
+

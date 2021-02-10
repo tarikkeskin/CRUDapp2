@@ -10,52 +10,34 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <!-- Navbar content -->
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">CRUD app</a>
-    <input type="text" name="serialNumber" class="form-control form-control-primary w-100"  placeholder="Search Product..." >
+    <a class="navbar-brand " href="#">CRUD app</a>
+    <div class="row">
+    <ul class="nav navbar-nav" routerLinkActive="active">
+      <li class="nav-item">
+        <a routerLink="products" class="btn btn-primary active" role="button" routerLinkActive="active" style="color: #000000">
+          <!-- ICON -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
+            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755z"/>
+          </svg>
+          Products
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="create" class="btn btn-primary active" role="button" routerLinkActive="active" style="color: #000000">
+          <!-- ICON -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-bar-graph-fill" viewBox="0 0 16 16">
+            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-2 11.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1z"/>
+          </svg>
+          Create Product
+        </a>
+      </li>
+    </ul>
+    </div>
 </nav>
-
-
-<!-- Container -->
-<div class="container">
-  <div class="row">
-    <!-- Sidebar -->
-    <div class="col-md-2 bg-light d-none d-md-block sidebar">
-      <div class="left-sidebar">
-        <ul class="nav flex-column sidebar-nav">
-          <li class="nav-item">
-            <a routerLink="products" class="btn btn-primary active" role="button" routerLinkActive="active" style="color: #000000">
-              <!-- ICON -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
-                <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755z"/>
-              </svg>
-              Products
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="create" class="btn btn-primary active" role="button" routerLinkActive="active" style="color: #000000">
-              <!-- ICON -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-bar-graph-fill" viewBox="0 0 16 16">
-                <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-2 11.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1z"/>
-              </svg>
-              Create Product
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
 <main>
-  <div class="container">
-    <div class="container-fluid">
 
-      <app-products-list name="aliveli"></app-products-list>
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+<router-outlet></router-outlet>
 </main>
-
 </body>

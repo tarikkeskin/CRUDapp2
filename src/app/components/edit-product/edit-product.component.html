@@ -10,8 +10,8 @@
 </head>
 <body>
 <div class="container">
-    <div  [hidden]="submitted" style="width: 300px;">
-        <h3>Create Product</h3>
+    <div  [hidden]="editted" style="width: 300px;">
+        <h3>Edit Product</h3>
         <form (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="title">Title</label>
@@ -19,25 +19,25 @@
             </div>
 
             <div class="form-group">
-                <label for="age">Description</label>
-                <input type="text" class="form-control" id="age" required [(ngModel)]="product.description" name="description">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" required [(ngModel)]="product.description" name="description">
             </div>
 
             <div class="form-group">
-                <label for="age">Price</label>
+                <label for="price">Price</label>
                 <input type="text" class="form-control" id="price" required [(ngModel)]="product.price" name="price">
             </div>
 
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success">Edit</button>
         </form>
     </div>
 </div>
 
-<div [hidden]="!submitted">
+<div [hidden]="!editted">
     <div class="alert alert-success">
         <h3>Success!</h3>
         <p>User successfully added to the user table.</p>
-        <button class="btn btn-success" (click)="newProduct()">Add</button>
+        <button class="btn btn-success" (click)="editProduct()">Edit</button>
     </div>
 </div>
 </body>
