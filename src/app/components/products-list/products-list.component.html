@@ -11,14 +11,16 @@
 
 </head>
 
-<body>
-<h1>Products</h1>
-<div class="container" >
-    <div class="row" >
-        <div class="col-md-4 mx-auto my-5" *ngFor="let product of products"  style="width: 300px;" >
-            <app-product-details  [product]='product'></app-product-details>
-        </div>
+<mat-toolbar style="background-color: #110909;font-size: 22px;color: aliceblue">Products</mat-toolbar>
+
+    <div class="container-fluid">
+        <mat-grid-list cols="3">
+            <mat-grid-tile *ngFor="let product of products" >
+                <mat-card class="productTile">
+                    <app-product-details  [product]='product'></app-product-details>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
     </div>
-</div>
-</body>
+
 

@@ -1,6 +1,7 @@
-<mat-toolbar> Product Details </mat-toolbar>
 
-<div class="details-book">
+<mat-toolbar style="background-color: #110909;font-size: 22px;color: aliceblue">Product Details</mat-toolbar>
+
+<div class="details-product">
     <mat-card>
         <mat-card-title>
             <span class="mat-card-header">{{title}}</span>
@@ -13,8 +14,8 @@
                 <mat-list>
                     <mat-list-item><i class="material-icons">star</i>ProductName:&nbsp;&nbsp;<b> {{title}}</b></mat-list-item>
                     <mat-list-item><i class="material-icons">star</i>Price:&nbsp;&nbsp;<b> {{price}}</b></mat-list-item>
-                    <mat-list-item><i class="material-icons">star</i>CreateDate:&nbsp;&nbsp;<b> {{CreateDate}}</b></mat-list-item>
-                    <mat-list-item><i class="material-icons">star</i>EditDate:&nbsp;&nbsp;<b> {{EditDate}}</b></mat-list-item>
+                    <mat-list-item *ngIf="formatted_createDate!='NaN undefined NaN NaN:NaN:NaN'"> <i class="material-icons">date_range</i> Date Created:&nbsp;&nbsp;<b> {{formatted_createDate}}</b> </mat-list-item>
+                    <mat-list-item *ngIf="formatted_editDate!='NaN undefined NaN NaN:NaN:NaN'"> <i class="material-icons">date_range</i> Date Last Edited:<b> {{formatted_editDate}}</b> </mat-list-item>
                 </mat-list>
             </div>
             <hr>

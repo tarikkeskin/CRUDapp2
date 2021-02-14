@@ -20,6 +20,10 @@ export class ProductComponent implements OnInit {
   title: any;
   description: any;
   price: any;
+  createDate: Date;
+  editDate: Date;
+  formatted_createDate: string;
+  formatted_editDate: any;
 
   constructor(private productService: ProductService,private router:Router,private route:ActivatedRoute) { }
 
@@ -31,6 +35,23 @@ export class ProductComponent implements OnInit {
       this.title=a.data().title;
       this.description=a.data().description;
       this.price=a.data().price;
+      this.createDate=a.data().createDate;
+      this.editDate=a.data().editDate;
+      this.formatted_createDate = this.timeConverter(this.createDate);
+      this.formatted_editDate = this.timeConverter(this.editDate);
     });
+
+  }
+  timeConverter(UNIX_timestamp){
+    var a = new Date(UNIX_timestamp * 1000);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear()-1969;
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    return time;
   }
 }

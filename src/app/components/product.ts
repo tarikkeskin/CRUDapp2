@@ -4,9 +4,9 @@ export class Product {
     title: string;
     description: string;
     price: string;
-    inStock: boolean;
+    inStock: false;
     createDate: Date;
     editDate: Date;
     deleteDate: Date;
-    isActive: boolean;
+    isDeleted: false;
 }

@@ -11,7 +11,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     // Here we are defining what are the states our panel can be in
     // and the style each state corresponds to.
     trigger('panelState', [
-      state('closed', style({ height: '96px', overflow: 'hidden' })),
+      state('closed', style({ height: '54px', overflow: 'hidden' })),
       state('open', style({ height: '*' })),
       transition('closed <=> open', animate('700ms ease-in-out')),
     ]),
@@ -21,10 +21,12 @@ export class ProductDetailsComponent implements OnInit {
 
   @Input() product: Product;
   folded = 'closed';
+  descriptionLength: number;
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    this.descriptionLength=this.product.description.length;
   }
 
   updateActive(isActive: boolean) {
@@ -35,7 +37,7 @@ export class ProductDetailsComponent implements OnInit {
   deleteProduct() {
     this.productService
         .deleteProduct(this.product.productID)
-        .catch(e => console.log(e));
+        //.catch(e => console.log(e));
   }
 
   // toggleFold function simply changes our folded property

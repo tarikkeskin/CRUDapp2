@@ -8,10 +8,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
+
+<mat-toolbar style="background-color: #110909;font-size: 22px;color: aliceblue">Create Product</mat-toolbar>
+
 <body>
-<div class="container">
+<div class="add-product-form">
     <div  [hidden]="submitted" style="width: 300px;">
-        <h3>Create Product</h3>
+        <a [routerLink]="['/products']">Back</a>
+        <hr>
         <form (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="title">Title</label>
@@ -28,6 +32,7 @@
                 <input type="text" class="form-control" id="price" required [(ngModel)]="product.price" name="price">
             </div>
 
+
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
     </div>
@@ -38,6 +43,8 @@
         <h3>Success!</h3>
         <p>User successfully added to the user table.</p>
         <button class="btn btn-success" (click)="newProduct()">Add</button>
+        <hr>
+        <button class="btn btn-success" [routerLink]="['/products']">Back to Products</button>
     </div>
 </div>
 </body>

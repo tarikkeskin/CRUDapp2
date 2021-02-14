@@ -11,6 +11,8 @@ export class CreateProductComponent implements OnInit {
 
   product: Product = new Product();
 
+
+
   submitted = false;
 
   constructor(private productService: ProductService) { }
@@ -21,6 +23,7 @@ export class CreateProductComponent implements OnInit {
   newProduct(): void {
     this.submitted = false;
     this.product = new Product();
+
   }
   save() {
     this.productService.createProduct(this.product);
@@ -28,6 +31,8 @@ export class CreateProductComponent implements OnInit {
   }
   onSubmit() {
     this.submitted = true;
+    this.product.createDate= new Date();
+    //console.log("+++"+this.product.createDate);
     this.save();
   }
 

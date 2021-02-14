@@ -12,7 +12,17 @@ import { environment } from '../environments/environment';
 
 //Material
 import { MatSliderModule } from '@angular/material/slider';
-import {MatCardModule, MatButtonModule, MatDatepickerModule, MatDatepicker, MatToolbarModule, MatListModule} from '@angular/material';
+import {MatGridListModule, MatNativeDateModule} from '@angular/material';
+
+import {
+  MatCardModule,
+  MatButtonModule,
+  MatDatepickerModule,
+  MatDatepicker,
+  MatToolbarModule,
+  MatListModule,
+  MatInputModule, MAT_DATE_LOCALE
+} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -44,10 +54,14 @@ import { ProductComponent } from './components/product/product.component';
     MatSliderModule,
     MatCardModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatInputModule,
+    MatGridListModule
   ],
-  providers: [{ provide: SETTINGS, useValue: {} }],
+  providers: [{ provide: SETTINGS, useValue: {} },
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
