@@ -27,8 +27,8 @@ export class ProductService {
     this.productRef.doc(productID).get().subscribe(a=>{
       //a.data().isDeleted=true;
       this.updateProduct(productID,{isDeleted: true})
-      console.log(a.data().isDeleted);
-      console.log(productID);
+      //console.log(a.data().isDeleted);
+      //console.log(productID);
     })
   }
   /*
@@ -40,3 +40,4 @@ export class ProductService {
     return this.productRef;
   }
 }
+

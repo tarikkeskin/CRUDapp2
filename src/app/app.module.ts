@@ -27,11 +27,13 @@ import {
 
 import { AppComponent } from './app.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductDetailsComponent } from './components/product-card-details/product-details.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { ProductComponent } from './components/product/product.component';
+import {DeletedProductsComponent} from './components/deleted-products/deleted-products.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { ProductComponent } from './components/product/product.component';
     CreateProductComponent,
     HomeComponent,
     EditProductComponent,
-    ProductComponent
+    ProductComponent,
+    DeletedProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import { ProductComponent } from './components/product/product.component';
     MatToolbarModule,
     MatListModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCarouselModule.forRoot()
   ],
   providers: [{ provide: SETTINGS, useValue: {} },
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],

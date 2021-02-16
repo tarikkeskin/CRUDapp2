@@ -24,6 +24,7 @@ export class ProductComponent implements OnInit {
   editDate: Date;
   formatted_createDate: string;
   formatted_editDate: any;
+  productID: any;
 
   constructor(private productService: ProductService,private router:Router,private route:ActivatedRoute) { }
 
@@ -39,6 +40,7 @@ export class ProductComponent implements OnInit {
       this.editDate=a.data().editDate;
       this.formatted_createDate = this.timeConverter(this.createDate);
       this.formatted_editDate = this.timeConverter(this.editDate);
+
     });
 
   }

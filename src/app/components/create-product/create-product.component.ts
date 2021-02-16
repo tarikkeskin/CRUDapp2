@@ -11,8 +11,6 @@ export class CreateProductComponent implements OnInit {
 
   product: Product = new Product();
 
-
-
   submitted = false;
 
   constructor(private productService: ProductService) { }

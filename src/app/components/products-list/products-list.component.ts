@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ProductService} from '../product.service';
 import {map} from 'rxjs/operators';
+import {Product} from '../product';
 
 
 @Component({
@@ -11,7 +12,7 @@ import {map} from 'rxjs/operators';
 export class ProductsListComponent implements OnInit {
 
   products: any;
-  
+  availableProduct2: Array<Product> = null;
 
   constructor(private productService: ProductService) { }
 
@@ -19,6 +20,7 @@ export class ProductsListComponent implements OnInit {
     this.getProductList();
   }
   getProductList() {
+    this.availableProduct2 = this.availableProduct2 || [];
 
     this.productService.getProductsList().snapshotChanges().pipe(
         map(a =>
@@ -27,8 +29,19 @@ export class ProductsListComponent implements OnInit {
             )
         )
     ).subscribe( product => {
-      this.products = product;
+      product.map(a=>
+      {
+        if (a != null) {
+          if (!a.isDeleted) {
+            this.availableProduct2.push(a);
+          }
+        }
+
+      })
+      //this.products = product;
+      console.log(this.availableProduct2);
     });
+
 
   }
 }

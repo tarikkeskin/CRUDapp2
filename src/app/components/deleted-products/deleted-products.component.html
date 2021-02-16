@@ -13,14 +13,14 @@
 
 <mat-toolbar style="background-color: #110909;font-size: 22px;color: aliceblue">Products</mat-toolbar>
 
-    <div class="container-fluid">
-        <mat-grid-list cols="3">
-            <mat-grid-tile *ngFor="let product of availableProduct2" >
-                <mat-card class="productTile">
-                    <app-product-details  [product]='product'></app-product-details>
-                </mat-card>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </div>
+<div class="container-fluid">
+    <mat-grid-list cols="3">
+        <mat-grid-tile *ngFor="let product of deletedProduct">
+            <mat-card class="productTile">
+                <app-product-details  [product]='product'></app-product-details>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
 
 
