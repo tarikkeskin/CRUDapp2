@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div *ngIf="app" >
+
+    <mat-card-header>
+        <mat-card-title><h4>{{app.title}}</h4></mat-card-title>
+    </mat-card-header>
+    <hr>
+
+    <img mat-card-image src="/assets/img/indir.jpeg" alt="{{app.title}}">
+
+    <mat-card-actions>
+        <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/oneProduct/'+this.app.appID]"> <i class="material-icons">visibility</i> Product Details</button>
+        <button mat-button mat-raised-button class="editButton" [routerLink]="['/edit/'+this.app.appID]"> <i class="material-icons">mode_edit</i> Edit Product</button>
+    </mat-card-actions>
+</div>
+
+</body>
+
+

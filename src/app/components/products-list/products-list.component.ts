@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, enableProdMode, Input, OnInit} from '@angular/core';
 import {ProductService} from '../product.service';
 import {map} from 'rxjs/operators';
 import {Product} from '../product';
@@ -11,13 +11,16 @@ import {Product} from '../product';
 })
 export class ProductsListComponent implements OnInit {
 
-  products: any;
-  availableProduct2: Array<Product> = null;
+  public availableProduct2: Array<Product>;
+
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.getProductList();
+    //console.log(this.availableProduct2);
+    this.assignIDs();
+
   }
   getProductList() {
     this.availableProduct2 = this.availableProduct2 || [];
@@ -25,7 +28,9 @@ export class ProductsListComponent implements OnInit {
     this.productService.getProductsList().snapshotChanges().pipe(
         map(a =>
             a.map(c =>
-                ({ productID: c.payload.doc.id, ...c.payload.doc.data() })
+                ({
+                  productID: c.payload.doc.id, ...c.payload.doc.data()
+                })
             )
         )
     ).subscribe( product => {
@@ -38,10 +43,14 @@ export class ProductsListComponent implements OnInit {
         }
 
       })
-      //this.products = product;
-      console.log(this.availableProduct2);
     });
-
+  }
+  assignIDs(){
+    console.log(this.availableProduct2.length);
+    for (let i=0;i< this.availableProduct2.length;i++){
+      console.log(this.availableProduct2[i]+"fadf");
+    }
 
   }
+
 }

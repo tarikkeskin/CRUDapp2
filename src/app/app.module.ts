@@ -25,15 +25,18 @@ import {
 } from '@angular/material';
 
 
-import { AppComponent } from './app.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
 import { ProductDetailsComponent } from './components/product-card-details/product-details.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
-import { HomeComponent } from './components/home/home.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { ProductComponent } from './components/product/product.component';
 import {DeletedProductsComponent} from './components/deleted-products/deleted-products.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import {AppComponent} from './app.component';
+import {AppsComponent} from './apps-component/apps/apps.component';
+import { AppsCreateComponent } from './apps-component/apps-create/apps-create.component';
+import { AppsListComponent } from './apps-component/apps-list/apps-list.component';
+import { AppsDetailsComponent } from './apps-component/apps-details/apps-details.component';
 
 @NgModule({
   declarations: [
@@ -41,10 +44,13 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     AppComponent,
     ProductDetailsComponent,
     CreateProductComponent,
-    HomeComponent,
     EditProductComponent,
     ProductComponent,
-    DeletedProductsComponent
+    DeletedProductsComponent,
+    AppsComponent,
+    AppsCreateComponent,
+    AppsListComponent,
+    AppsDetailsComponent
   ],
   imports: [
     BrowserModule,

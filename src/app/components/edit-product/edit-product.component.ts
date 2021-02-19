@@ -38,6 +38,11 @@ export class EditProductComponent implements OnInit {
         .updateProduct(this.id, {categoryID: categoryID})
         .catch(e => console.log(e));
   }
+  updateProductID(productID: string) {
+    this.productService
+        .updateProduct(this.id, {productID: productID})
+        .catch(e => console.log(e));
+  }
   updateTitle(title: string) {
     this.productService
         .updateProduct(this.id, {title: title})

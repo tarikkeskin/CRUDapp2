@@ -15,54 +15,8 @@
             <mat-card-subtitle>{{product.inStock}}</mat-card-subtitle>
         </mat-card-header>
         <hr>
-        <!--
+
         <img mat-card-image src="/assets/img/indir.jpeg" alt="{{product.title}}">
-        -->
-
-         <div id="myCarousel" class="carousel slide">
-                <ol class="carousel-indicators">
-                    <li class="item1 active"></li>
-                    <li class="item2"></li>
-                    <li class="item3"></li>
-                    <li class="item4"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-
-                    <div class="item active">
-                        <img src="/assets/img/indir2.jpeg" alt="Chania" >
-                        <div class="carousel-caption">
-                            <h3>Chania</h3>
-                            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="/assets/img/indir1.jpeg" alt="Chania" >
-                        <div class="carousel-caption">
-                            <h3>Chania</h3>
-                            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="/assets/img/indir3.jpeg" alt="Flower" >
-                        <div class="carousel-caption">
-                            <h3>Flowers</h3>
-                            <p>Beautiful flowers in Kolymbari, Crete.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <a class="left carousel-control" href="#myCarousel" role="button">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-
 
     <mat-card-actions>
             <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/oneProduct/'+this.product.productID]"> <i class="material-icons">visibility</i> Product Details</button>

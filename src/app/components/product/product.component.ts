@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../product.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Product} from '../product';
-import {AngularFirestoreDocument, DocumentChangeAction} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 import firebase from 'firebase';
-import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
-import {map} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-product',

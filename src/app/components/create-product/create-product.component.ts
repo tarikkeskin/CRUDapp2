@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from '../product';
 import {ProductService} from '../product.service';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-create-product',
@@ -20,17 +21,17 @@ export class CreateProductComponent implements OnInit {
 
   newProduct(): void {
     this.submitted = false;
-    this.product = new Product();
+    //this.product = new Product();
 
   }
   save() {
     this.productService.createProduct(this.product);
-    this.product = new Product();
+    //this.product = new Product();
   }
   onSubmit() {
     this.submitted = true;
     this.product.createDate= new Date();
-    //console.log("+++"+this.product.createDate);
+
     this.save();
   }
 

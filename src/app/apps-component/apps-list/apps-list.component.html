@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="products-list.component.ts"></script>
+
+</head>
+
+<mat-toolbar style="background-color: #110909;font-size: 22px;color: aliceblue">Products</mat-toolbar>
+
+<div class="container-fluid">
+    <mat-grid-list cols="3">
+        <mat-grid-tile *ngFor="let app of appsArray">
+            <mat-card class="productTile">
+                <app-apps-details [app]='app'></app-apps-details>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
