@@ -19,21 +19,20 @@
         <form (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" required [(ngModel)]="product.title" name="title">
-            </div>
+                <input type="text" autocomplete="off" class="form-control" id="title" required [(ngModel)]="product.title" name="title">
+	    </div>	
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" required [(ngModel)]="product.description" name="description">
-            </div>
-
+                <input type="text" autocomplete="off" class="form-control" id="description" required [(ngModel)]="product.description" name="description">
+	    </div>
+            
             <div class="form-group">
                 <label for="price">Price</label>
-                <input type="text" class="form-control" id="price" required [(ngModel)]="product.price" name="price">
-            </div>
+                <input type="text" autocomplete="off" class="form-control" id="price" required [(ngModel)]="product.price" name="price">
+	    </div>
 
-
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" [disabled]="!product.title || !product.description || !product.price" class="btn btn-success">Submit</button>
         </form>
     </div>
 </div>
