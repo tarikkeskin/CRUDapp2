@@ -13,14 +13,18 @@
 
     <mat-card-header>
         <mat-card-title><h4>{{app.title}}</h4></mat-card-title>
+        <mat-card-title><h4>{{app.isDeleted}}</h4></mat-card-title>
+
     </mat-card-header>
     <hr>
 
-    <img mat-card-image src="/assets/img/indir.jpeg" alt="{{app.title}}">
+    <img mat-card-image src="/assets/img/indir3.jpeg" alt="{{app.title}}">
 
     <mat-card-actions>
-        <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/oneProduct/'+this.app.appID]"> <i class="material-icons">visibility</i> Product Details</button>
-        <button mat-button mat-raised-button class="editButton" [routerLink]="['/edit/'+this.app.appID]"> <i class="material-icons">mode_edit</i> Edit Product</button>
+        <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/App/'+this.app.appID]"> <i class="material-icons">visibility</i> App Details</button>
+        <button mat-button mat-raised-button class="editButton" [routerLink]="['/edit/'+this.app.appID]"> <i class="material-icons">mode_edit</i> Edit App</button>
+        <button class="btn btn-success" (click)="deleteApp()">Delete App</button>
+
     </mat-card-actions>
 </div>
 

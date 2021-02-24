@@ -29,22 +29,13 @@ export class AppsCreateComponent implements OnInit {
   }
 
   save(){
-    this.appService.getAppList().snapshotChanges().pipe(
-        map(a =>
-            a.map(c =>
-                ({appID: c.payload.doc.id, ...c.payload.doc.data()})
-            )
-        )
-    ).subscribe(a=>a.map(b=>{
-      this.appId=b.appID;
-    }));
     this.appService.createApp(this.app);
 
   }
   onSubmitApp(){
     this.submitted = true;
-    //console.log(this.app.appID);
-    //this.app.createDate = new Date();
+    this.app.createDate = new Date();
+    this.app.isDeleted=false;
     this.save();
   }
 

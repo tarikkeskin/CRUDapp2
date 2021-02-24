@@ -8,9 +8,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<mat-toolbar style="background-color: #110909;font-size: 22px;color: aliceblue">Product Details</mat-toolbar>
+<mat-toolbar style="background-color: #110909;font-size: 22px;color: aliceblue">AppID {{id}}</mat-toolbar>
 
-<div class="details-product">
+<body>
+<div class="details-product" *ngFor="let productID of appProductsID">
     <mat-card>
         <mat-card-title>
             <span class="mat-card-header">{{"title"}}</span>
@@ -21,9 +22,8 @@
             </div>
             <div class="right">
                 <mat-list>
-                    <mat-list-item><i class="material-icons">star</i>ProductID:&nbsp;&nbsp;<b> {{id}}</b></mat-list-item>
-                    <mat-list-item *ngFor="let appID of appProductsID">
-                        <i class="material-icons">star</i>ProductID:&nbsp;&nbsp;<b> {{appID}}</b>
+                    <mat-list-item >
+                        <i class="material-icons">star</i>ProductID:&nbsp;&nbsp;<b> {{productID}}</b>
                     </mat-list-item>
                 </mat-list>
             </div>
@@ -31,8 +31,21 @@
 
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button mat-raised-button class="editButton" [routerLink]="['/edit/'+this.id]"> <i class="material-icons">mode_edit</i> Edit Product</button>
+            <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/Product/'+productID]"> <i class="material-icons">visibility</i> Product Details</button>
+            <button mat-button mat-raised-button class="editButton" [routerLink]="['/edit/'+productID]"> <i class="material-icons">mode_edit</i> Edit Product</button>
             <hr />
         </mat-card-actions>
     </mat-card>
 </div>
+<div class="details-product">
+    <mat-card>
+        <mat-card-content>
+            <mat-card-actions>
+                <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/App/'+id+'/createProduct/']"> <i class="material-icons">visibility</i> Create Product </button>
+            </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+
+</div>
+
+</body>

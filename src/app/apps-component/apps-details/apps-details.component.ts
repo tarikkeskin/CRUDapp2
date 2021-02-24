@@ -16,15 +16,13 @@ export class AppsDetailsComponent implements OnInit {
 
   ngOnInit() {
 
-/*
-    this.appService
-        .updateApp(this.app.appID,{appID: this.app.appID})
-        .catch(e=>console.log(e));
-*/
+
 
   }
-  lala(){
-    console.log("LALA");
+  deleteApp() {
+    this.appService
+        .deleteApp(this.app.appID);
+    //.catch(e => console.log(e));
   }
 
 

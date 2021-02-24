@@ -1,5 +1,5 @@
 export class Product {
-    categoryID: string;
+    appID: string;
     productID: string;
     title: string;
     description: string;
@@ -7,6 +7,5 @@ export class Product {
     inStock: false;
     createDate: Date;
     editDate: Date;
-    deleteDate: Date;
-    isDeleted: false;
+    isDeleted: boolean;
 }

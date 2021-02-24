@@ -17,40 +17,37 @@ export class ProductsListComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.getProductList();
-    //console.log(this.availableProduct2);
-    this.assignIDs();
+   // this.getProductList();
+
+    console.log("product-list-<");
+    console.log(this.availableProduct2);
 
   }
   getProductList() {
+
     this.availableProduct2 = this.availableProduct2 || [];
 
     this.productService.getProductsList().snapshotChanges().pipe(
         map(a =>
             a.map(c =>
                 ({
-                  productID: c.payload.doc.id, ...c.payload.doc.data()
+                   productID: c.payload.doc.id, ...c.payload.doc.data()
                 })
             )
         )
-    ).subscribe( product => {
-      product.map(a=>
+    ).subscribe( products => {
+      products.map(product=>
       {
-        if (a != null) {
-          if (!a.isDeleted) {
-            this.availableProduct2.push(a);
+        if (product != null) {
+          if (!product.isDeleted) {
+            this.availableProduct2.push(product);
           }
         }
 
       })
     });
-  }
-  assignIDs(){
-    console.log(this.availableProduct2.length);
-    for (let i=0;i< this.availableProduct2.length;i++){
-      console.log(this.availableProduct2[i]+"fadf");
-    }
 
   }
+
 
 }

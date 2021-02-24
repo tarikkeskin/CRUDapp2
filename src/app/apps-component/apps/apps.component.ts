@@ -16,24 +16,31 @@ export class AppsComponent implements OnInit {
 
   id: any;
   app: Observable<firebase.firestore.DocumentSnapshot<Apps>>;
-  appID: any;
-
 
   appProductsID: Array<String>;
 
-  constructor(private appService: AppsService,private productService: ProductService,private router:Router,private route:ActivatedRoute) { }
+  constructor(private appService: AppsService,
+              private productService: ProductService,
+              private router:Router,
+              private route:ActivatedRoute) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params['id'];
+
+    this.id = this.route.snapshot.params['appID'];
 
     this.appProductsID = this.appProductsID || [];
+
+    console.log(this.id);
 
     this.app=this.appService.getAppList().doc(this.id).get();
     this.app
         .subscribe(app=>{
-          this.appID=app.data().appID;
-          this.appProductsID.push(this.appID);
+          app.data().products.map(product=>{
+            this.appProductsID.push(product.toString());
+          })
         });
+    console.log("AppsComponent->");
+    console.log(this.appProductsID);
 
   }
 

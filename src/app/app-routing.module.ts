@@ -9,17 +9,21 @@ import {DeletedProductsComponent} from './components/deleted-products/deleted-pr
 import {AppsCreateComponent} from './apps-component/apps-create/apps-create.component';
 import {AppsListComponent} from './apps-component/apps-list/apps-list.component';
 import {AppsComponent} from './apps-component/apps/apps.component';
+import {DeletedAppsComponent} from './apps-component/deleted-apps/deleted-apps.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'product', pathMatch: 'full' },
+  { path: '', redirectTo: 'products', pathMatch: 'full' },
   { path: 'products', component: ProductsListComponent },
   { path: 'create', component: CreateProductComponent},
   {path: 'edit/:id', component: EditProductComponent},
-  {path: 'oneProduct/:id', component: ProductComponent},
+  {path: 'Product/:id', component: ProductComponent},
   {path: 'deletedProducts', component: DeletedProductsComponent},
   {path: 'createApp', component: AppsCreateComponent},
   {path: 'appList', component: AppsListComponent},
-  {path: 'Category/:id', component:AppsComponent}
+  {path: 'App/:appID', component:AppsComponent},
+  { path: 'App/:appID/createProduct', component: CreateProductComponent},
+  {path: 'deletedApps', component: DeletedAppsComponent}
+
 ];
 
 @NgModule({

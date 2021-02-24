@@ -37,6 +37,7 @@ import {AppsComponent} from './apps-component/apps/apps.component';
 import { AppsCreateComponent } from './apps-component/apps-create/apps-create.component';
 import { AppsListComponent } from './apps-component/apps-list/apps-list.component';
 import { AppsDetailsComponent } from './apps-component/apps-details/apps-details.component';
+import { DeletedAppsComponent } from './apps-component/deleted-apps/deleted-apps.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { AppsDetailsComponent } from './apps-component/apps-details/apps-details
     AppsComponent,
     AppsCreateComponent,
     AppsListComponent,
-    AppsDetailsComponent
+    AppsDetailsComponent,
+    DeletedAppsComponent
   ],
   imports: [
     BrowserModule,

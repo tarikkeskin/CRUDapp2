@@ -25,11 +25,19 @@ export class AppsService {
   }
 
   deleteApp(appID: string){
-    this.appRef.doc(appID).get().subscribe(a=>{
-      //a.data().isDeleted=true;
-      this.updateApp(appID,{isDeleted: true})
-      //console.log(a.data().isDeleted);
-      //console.log(productID);
+    this.appRef.doc(appID).get().subscribe(app=>{
+
+      this.updateApp(appID,{isDeleted: true}).then(()=>window.location.reload());
+      /*
+      for (let i=0;i<app.data().products.length;i++){
+        //console.log(a.data().products[i]);
+        this.productService.productRef.doc(app.data().products[i]).get().subscribe(product=>{
+          product.data().isDeleted=true;
+        })
+      }
+
+       */
+
     })
   }
 

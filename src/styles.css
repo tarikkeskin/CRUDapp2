@@ -40,7 +40,7 @@ mat-grid-tile{
 .right{float: left; padding: 25px;}
 
 .delete-confirm{margin:0 auto; width: 40%;}
-.details-product{ margin:0 auto; width: 60%;height: 100vh }
+.details-product{ margin:0 auto; width: 60%;height: 50vh }
 .bookTile{
     padding:25px auto;
 

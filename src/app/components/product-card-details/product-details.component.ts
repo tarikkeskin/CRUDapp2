@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from '../product';
-import {ProductService} from '../product.service';
+//import {ProductService} from '../product.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -22,7 +22,7 @@ export class ProductDetailsComponent implements OnInit {
   @Input() product: Product;
   folded = 'closed';
 
-  constructor(private productService: ProductService) {
+  constructor() {
 
   }
 
@@ -35,16 +35,6 @@ export class ProductDetailsComponent implements OnInit {
      */
   }
 
-  updateActive(isActive: boolean) {
-    this.productService
-        .updateProduct(this.product.productID, {isActive: isActive})
-        .catch(e => console.log(e));
-  }
-  deleteProduct() {
-    this.productService
-        .deleteProduct(this.product.productID)
-        //.catch(e => console.log(e));
-  }
 
   // toggleFold function simply changes our folded property
   // between "open" and "closed"

@@ -11,11 +11,11 @@
 
 </head>
 
-<mat-toolbar style="background-color: #110909;font-size: 22px;color: aliceblue">Apps</mat-toolbar>
+<mat-toolbar style="background-color: #110909;font-size: 22px;color: aliceblue">DELETED Apps</mat-toolbar>
 
 <div class="container-fluid">
     <mat-grid-list cols="3">
-        <mat-grid-tile *ngFor="let app of appsArray">
+        <mat-grid-tile *ngFor="let app of deletedAppsArray">
             <mat-card class="productTile">
                 <app-apps-details [app]='app'></app-apps-details>
             </mat-card>

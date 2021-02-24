@@ -3,6 +3,7 @@ import {ProductService} from '../../components/product.service';
 import {Apps} from '../apps';
 import {map} from 'rxjs/operators';
 import {AppsService} from '../apps.service';
+import {Product} from '../../components/product';
 
 @Component({
     selector: 'app-apps-list',
@@ -12,18 +13,18 @@ import {AppsService} from '../apps.service';
 export class AppsListComponent implements OnInit {
 
     public appsArray: Array<Apps>;
+    public availableProduct: Array<Product>;
+
 
     constructor(private appService: AppsService, private productService: ProductService) {
     }
 
     ngOnInit() {
-        this.getAppList();
-        console.log(this.appsArray);
-
-        //this.getProductsByAppID('fd');
+        this.getAppListandIDs();
+        this.getProductListandIDs();
     }
 
-    getAppList() {
+    getAppListandIDs() {
         this.appsArray = this.appsArray || [];
 
         this.appService.getAppList().snapshotChanges().pipe(
@@ -32,19 +33,41 @@ export class AppsListComponent implements OnInit {
                     ({appID: c.payload.doc.id, ...c.payload.doc.data()})
                 )
             )
-        ).subscribe(product => {
-            product.map(a => {
-                this.appsArray.push(a);
+        ).subscribe(apps => {
+            apps.map(app => {
+                if (!app.isDeleted) {
+                    this.appsArray.push(app);
+                }
             });
 
         });
 
 
     }
+    getProductListandIDs() {
 
-    getAppsProductsIDs(){
-        //this.appsArray.map(a=>console.log(a.products));
-        console.log(this.appsArray.map(a=>this.appService.getAppList().doc(a.appID)));
+        this.availableProduct = this.availableProduct || [];
+
+        this.productService.getProductsList().snapshotChanges().pipe(
+            map(a =>
+                a.map(c =>
+                    ({
+                        productID: c.payload.doc.id, ...c.payload.doc.data()
+                    })
+                )
+            )
+        ).subscribe( products => {
+            products.map(product=>
+            {
+                if (product != null) {
+                    if (!product.isDeleted) {
+                        this.availableProduct.push(product);
+                    }
+                }
+
+            })
+        });
+
     }
 
     getProductsByAppID(appID) {
